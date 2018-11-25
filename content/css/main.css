@@ -1,0 +1,57 @@
+body {
+  background: #fafafa;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: #333; }
+
+/* ==========================================================================
+Hide ng-cloak on page load, https://docs.angularjs.org/api/ng/directive/ngCloak
+========================================================================== */
+[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+  display: none !important; }
+
+/* ==========================================================================
+Main page styles
+========================================================================== */
+.sim-container {
+  margin-left: 10px; }
+
+.block-container {
+  display: inline-flex; }
+
+span hr {
+  margin-top: 10px;
+  margin-bottom: 10px; }
+
+.align-left {
+  box-align: start; }
+
+.align-right {
+/*   box-align: end; } */
+  right: 10px; }
+
+.console-window {
+  height: 50%;
+  width: 300px; }
+
+.controls {
+  padding: 10px;
+  border: 1px solid grey; }
+
+td {
+  border: 1px dotted #090;
+  width: 10px;
+  height: 10px; }
+
+.black {
+  background-color: black; }
+
+.white {
+  background-color: white; }
+
+.road {
+  background: url("../images/road.png");
+  border: 1px solid #000000; }
+
+.readonly {
+  background-color: #eee;
+  opacity: 1; }
