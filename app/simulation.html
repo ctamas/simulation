@@ -15,12 +15,12 @@
             <button label="clear" ng-click="vm.clearScenario()">Clear Scenario</button><br>
             <hr>
             <div>
-            <span>Runtime length (s)</span><br>
-            <input class="align-left" type="number" name="runtime" step="10" min="10" max="60" ng-model="vm.runtime">
+                <span>Runtime length (s)</span><br>
+                <input class="align-left" type="number" name="runtime" step="10" min="10" max="60" ng-model="vm.runtime">
             </div>
             <div>
-            <span>Frame time (ms)</span><br>
-            <input class="align-right" type="number" name="frameTime" min="200" step="100" max="1000" ng-model="vm.frameTime"><br>
+                <span>Frame time (ms)</span><br>
+                <input class="align-right" type="number" name="frameTime" min="200" step="100" max="1000" ng-model="vm.frameTime"><br>
             </div>
             <hr>
             Example scenarios<br>
@@ -51,42 +51,36 @@
                 </tr>
             </table>
         </span>
-                    <span class="controls">
+        <span class="controls">
         <h4>Network Configuration</h2>
         <hr>
-            <span>Network type</span><br>
-                <select ng-model="vm.selectedNetworkType" required name="NNType" ng-change="vm.init()">
-                <option ng-init="vm.selectedNetworkType = vm.selectableNetworkTypes[0]" ng-repeat="network in vm.selectableNetworkTypes track by $index" value="{{network}}">{{::network}}</option>
-            </select>
-            <hr>
-            <div ng-if="vm.selectedNetworkType == 'Perceptron' || vm.selectedNetworkType == 'Stochastic'">
-	            <span>Hidden neuron count</span><br>
-                   <input class="align-right" type="number" name="frameTime" min="0" step="1" max="100" ng-model="vm.hiddenNeuron" ng-change="vm.init()"><br>
-            </div>
-            <div ng-if="vm.selectedNetworkType == 'Liquid State Machine'">
-	            <span>Pool neuron count</span><br>
-                   <input class="align-right" type="number" name="frameTime" min="0" step="1" max="100" ng-model="vm.hiddenNeuron" ng-change="vm.init()"><br>
-	            </select>
-	            <span>Connection count</span><br>
-                   <input class="align-right" type="number" name="frameTime" min="0" step="1" max="100" ng-model="vm.connectionCount" ng-change="vm.init()"><br>
-	            </select>
-            </div>
-            <div ng-if="vm.selectedNetworkType != 'Hopfield'">
-	            <span>Training rate</span><br>
-                   <input class="align-right" type="number" name="frameTime" min="0.1" step="0.01" max="1" ng-model="vm.trainingRate" ng-change="vm.init()"><br>
-	            </select>
-	            <span>Target error rate</span><br>
-                   <input class="align-right" type="number" name="frameTime" min="0.001" step="0.001" max="0.1" ng-model="vm.errorRate" ng-change="vm.init()"><br>
-	            </select>
-	            <hr>
-            </div>
-            <button label="benchmark" class="" ng-click="vm.init()">Benchmark current</button>
-            <button ng-if="vm.selectedNetworkType != 'Hopfield'" label="optimal" class="" ng-click="vm.handleFindOptimum()">Find optimum</button><br>
-            <hr>
-                    
-            <span>Console output</span><br>
-<textarea class="console-window" disabled ng-model="vm.consoleOut">
-</textarea>
-    </span>
+		<span>Network type</span><br>
+		<select ng-model="vm.selectedNetworkType" required name="NNType" ng-change="vm.init()">
+			<option ng-init="vm.selectedNetworkType = vm.selectableNetworkTypes[0]" ng-repeat="network in vm.selectableNetworkTypes track by $index" value="{{network}}">{{::network}}</option>
+		</select>
+		<hr>
+		<div ng-if="vm.selectedNetworkType == 'Perceptron' || vm.selectedNetworkType == 'Stochastic'">
+			<span>Hidden neuron count</span><br>
+			<input class="align-right" type="number" name="frameTime" min="0" step="1" max="100" ng-model="vm.hiddenNeuron" ng-change="vm.init()"><br>
+		</div>
+		<div ng-if="vm.selectedNetworkType == 'Liquid State Machine'">
+			<span>Pool neuron count</span><br>
+			<input class="align-right" type="number" name="frameTime" min="0" step="1" max="100" ng-model="vm.hiddenNeuron" ng-change="vm.init()"><br>
+			<span>Connection count</span><br>
+			<input class="align-right" type="number" name="frameTime" min="0" step="1" max="100" ng-model="vm.connectionCount" ng-change="vm.init()"><br>
+		</div>
+		<div ng-if="vm.selectedNetworkType != 'Hopfield'">
+			<span>Training rate</span><br>
+			<input class="align-right" type="number" name="frameTime" min="0.1" step="0.01" max="1" ng-model="vm.trainingRate" ng-change="vm.init()"><br>
+			<span>Target error rate</span><br>
+			<input class="align-right" type="number" name="frameTime" min="0.001" step="0.001" max="0.1" ng-model="vm.errorRate" ng-change="vm.init()"><br>
+			<hr>
+		</div>
+		<button label="benchmark" class="" ng-click="vm.init()">Benchmark current</button>
+		<button ng-if="vm.selectedNetworkType != 'Hopfield'" label="optimal" class="" ng-click="vm.handleFindOptimum()">Find optimum</button><br>
+		<hr>		
+		<span>Console output</span><br>
+		<textarea class="console-window" disabled ng-model="vm.consoleOut"></textarea>
+        </span>
     </div>
 </div>
